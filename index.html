@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Newsletter MMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            const form = document.getElementById('myform');
+            const submitButton = document.getElementById('submitButton');
+            const loader = document.getElementById('loader');
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const action = e.target.action;
+
+                // Afficher l'animation de chargement
+                loader.style.display = 'block';
+                submitButton.disabled = true; // Désactiver le bouton d'envoi
+                submitButton.style.opacity = '0.5'; // Réduire l'opacité du bouton
+
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then(() => {
+                        // Masquer l'animation de chargement
+                        loader.style.display = 'none';
+                        submitButton.disabled = false; // Activer à nouveau le bouton d'envoi
+                        submitButton.style.opacity = '1'; // Rétablir l'opacité du bouton
+
+                        alert("Inscription validée avec succès");
+
+                        // Redirection vers la page de remerciement
+                        window.location.href = 'remerciement.html';
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>La boutique ouvrira très prochainement</h1>
+    <h2>EN VOUS INSCRIVANT VOUS RECEVREZ UN MAIL DÈS L'OUVERTURE DE LA BOUTIQUE </h2>
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbz3Tveyw1-dGrWo17hOsHnnJ-ieCEyiokeVwk1bHCIGfZ3H2blt5rCgcjoysjDdfrwK3Q/exec"
+          id="myform">
+        <input type="email" id="email" placeholder="E-MAIL" name="Email" required style="font-weight: bold; background-color: #DBDADA; color: #5B5B5B; ">
+        <br>
+        <button type="submit" id="submitButton" style="font-weight: bold; font-size: 20px;">S'INSCRIRE</button>
+        <div id="loader" class="loader"></div>
+    </form>
+    <p class="mentions-legales">© 2023 MMES Bijoux - Tous droits réservés</p>
+    <script src="script.js"></script>
+</body>
+</html>

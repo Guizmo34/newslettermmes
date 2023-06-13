@@ -1,0 +1,184 @@
+﻿@font-face {
+    font-family: 'lovelo';
+    src: url(lovelo.otf) format('opentype');
+}
+
+body {
+    position: relative;
+    background-color: #f2f2f2;
+    color: #f2f2f2;
+    font-weight: bold;
+    font-family: lovelo;
+    padding: 20px;
+    margin: 0;
+}
+
+    body::after {
+        content: '';
+        background-image: url('https://cdn.discordapp.com/attachments/1053735647078256653/1118156062864978041/Design_sans_titre_1.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        filter: blur(2px);
+    }
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 10px;
+    letter-spacing: 2px; /* Espacement entre les caractères */
+    font-weight: 300; /* Poids de la police (plus fin) */
+    color: #FFFFFF;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    letter-spacing: 2px; /* Espacement entre les caractères */
+    font-weight: 300; /* Poids de la police (plus fin) */
+    color: #FFFFFF;
+}
+
+#submitButton {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#email {
+    font-weight: bold;
+    background-color: #DBDADA;
+    color: #5B5B5B;
+}
+
+/* Reste du code inchangé */
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+input,
+button {
+    background-color: #929292;
+    display: block;
+    width: 80%;
+    padding: 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #DBDADA;
+}
+
+
+    input[type="text"],
+    input[type="email"] {
+        max-width: 300px;
+        margin: -10px auto;
+        margin-top: 25px;
+    }
+
+button {
+    background-color: #B254CD;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 8px;
+    width: 170px;
+    margin: 10px auto;
+    margin-top: 12px;
+    border-radius: 40px;
+}
+
+    button:hover {
+        background-color: #AF4CCB;
+    }
+
+
+/* Media query pour le format téléphone en mode portrait */
+@media screen and (max-aspect-ratio: 9/16) {
+    body {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px; /* Taille du titre augmentée */
+        margin-bottom: 10px;
+        margin-top: 30px; /* Marge supérieure augmentée */
+    }
+
+    h2 {
+        font-size: 18px; /* Taille du sous-titre augmentée */
+        margin-bottom: 10px;
+        margin-top: 20px; /* Marge supérieure augmentée */
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 20px; /* Marge supérieure augmentée */
+    }
+
+    button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-top: 20px; /* Marge supérieure augmentée */
+    }
+}
+
+.mentions-legales {
+    text-align: center;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .mentions-legales {
+        font-size: 10px;
+    }
+}
+
+
+.loader {
+    border: 4px solid #FFFFFF;
+    border-top: 4px solid #B254CD;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1.2s ease-in-out infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
